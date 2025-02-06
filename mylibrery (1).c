@@ -3,6 +3,8 @@
 #include<stdlib.h>
 #include<stdbool.h>
 #include"my headers.h"
+
+
 int factorial(int A)
 {
 	int i,prod;
@@ -927,7 +929,7 @@ int SumArray(int arr[],int size)
 	return sum;
 		}	
 		
-double AverageArray(int arr[],int size)
+double averageArray(int arr[],int size)
 {
 	int sume;
 	double average;
@@ -1262,18 +1264,3 @@ void quickSort(int arr[], int low, int high) {
         quickSort(arr, pivotIndex + 1, high);
    }
 }
-
-
-
-																																																
-		
-		
-	
-
-	
-	
-	
-	
-
-
-
