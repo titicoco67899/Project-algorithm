@@ -8,7 +8,7 @@ int main()
 	int i,n,m,desire,t;
 	int arr[20];
 	char ch;
-	printf("welcom to library trsting main algorithm!\n");
+	printf("welcome to library testing main algorithm!\n");
 	printf("OPERATIONS ON NUMBERS:\n\nBASIC OPERATIONS\n\n1-sum of digits\n2-reverse number\n3-ispalindrom\n4-isprime\n5-gcd\n6-lcm\n-7factorial\n8-iseven\n\nINTERMEDIATE OPERATIONS\n\n9-prime factorization\n10-isarmstrong\n11-fibonacci sequence\n12-sum of divisors\n");
 	printf("13-isperfect\n14-ismagic\n15-is automorphic\n\nADVANCED OPERATIONS\n\n16-tobinary\n17-isNarceciste\n18-sqrt aproximiation\n19-exponential\n20-is happy\n21-isabundat\n22-isdeficient\n23-sum even fibonacci\n24-isharshad\n");
 	printf("25-catalan number\n26-pascal triangle\n28-kaprekar number\n29-smith number\n30-sum of prime numbers\n");
@@ -37,7 +37,7 @@ int main()
 			do
 			{
 			printf("\ngive your number:");
-			scanf("%d",n);
+			scanf("%d",&n);
 			t=reverseNumber(n);
 			printf("\nthe reverse is:%d",t);
 			printf("do you want to try for another number:y/N");
@@ -145,7 +145,9 @@ int main()
 			do{
 			printf("give your number:\n");
 			scanf("%d",&n);
-			printf("the prime factorization is:%d\n");primefactors(n);
+		
+			printf("the prime factorization is:\n");
+			primefactors(n);
 			printf("do you want to try again:y/N\n");
 			scanf(" %c", &ch);	
 				
@@ -178,7 +180,9 @@ int main()
 					printf("we will generate the fibonacci sequence up to the nth term\n");
 					printf("give your number:");
 					scanf("%d",&n);
-					printf("\n the result is:%d");fibonacciSeries(n);
+				    
+					printf("\n the result is:");
+					fibonacciSeries(n);
 					printf("\n do you want to try again:y/N");
 					scanf(" %c", &ch);
 				}while(ch=='y');
@@ -291,7 +295,7 @@ int main()
 			{
 				printf("give your number:\n");
 				scanf("%d",&n);
-				printf("the appriximiation is :%d\n",SqrtApprox(n));
+				printf("the appriximiation is :%f\n",SqrtApprox(n));
 				printf("do you want to try again:y/N\n");
 				scanf(" %c", &ch);
 			}while(ch=='y');
@@ -307,7 +311,7 @@ int main()
 			scanf("%d",&n);
 			printf("\ngive the power:\n");
 			scanf("%d",&k);
-			printf("the result is:%d\n",power(n,k));
+			printf("the result is:%f\n",power(n,k));
 			printf("do you want to try again:y/N");
 			scanf(" %c", &ch);
 										}while(ch=='y');
@@ -374,7 +378,7 @@ int main()
 			do{
 				printf("give the number:\n");
 				scanf("%d",&n);
-				printf("the sum is:%d\n");sumEvenFibonacci(n);
+				printf("the sum is:%d\n",sumEvenFibonacci(n));
 				printf("do you want to try again:y/N");
 				scanf(" %c", &ch);
 			}while(ch=='y');
@@ -405,7 +409,7 @@ int main()
 			do{
 				printf("give the number:\n");
 				scanf("%d",&n);
-				printf("the result is:%d\n",catalanNumber(n));
+				printf("the result is:%lu\n",catalanNumber(n));
 				printf("do you want to try again:y/N");
 				scanf(" %c", &ch);
 			}while(ch=='y');
@@ -573,7 +577,7 @@ int main()
 			{
 				scanf("%d", &arr[i]);
 			}
-			average=AverageArray(arr,n);
+			average=averageArray(arr,n);
 			printf("the average is:%d",average);
 			printf("\n do you want to try again:y/n");
 			scanf(" %c", &ch);
@@ -803,7 +807,7 @@ int main()
                                 printf("Enter array size : ");
                                 scanf("%d", &size);
                                 printf("Enter array elements : ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     scanf("%d", &arr[i]);
                                 }
@@ -817,13 +821,13 @@ int main()
                                 printf("Enter array size: ");
                                 scanf("%d",&size);
                                 printf("Enter array elements: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     scanf("%d",&arr[i]);
                                 }
                                 bubbleSort(arr,size);
                                 printf("Sorted array: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     printf("%d ",arr[i]);
                                 }
@@ -838,13 +842,13 @@ int main()
                                 printf("Enter array size: ");
                                 scanf("%d",&size);
                                 printf("Enter array elements: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     scanf("%d",&arr[i]);
                                 }
                                 selectionSort(arr,size);
                                 printf("Sorted array: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     printf("%d ",arr[i]);
                                 }
@@ -857,13 +861,13 @@ int main()
                                 printf("Enter array size: ");
                                 scanf("%d",&size);
                                 printf("Enter array elements: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     scanf("%d",&arr[i]);
                                 }
                                 insertionSort(arr,size);
                                 printf("Sorted array: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     printf("%d ",arr[i]);
                                 }
@@ -877,13 +881,13 @@ int main()
                                 printf("Enter array size: ");
                                 scanf("%d",&size);
                                 printf("Enter array elements: ");
-                                for(int i=0;i<size;i++)
+                                for( i=0;i<size;i++)
                                 {
                                     scanf("%d",&arr[i]);
                                 }
-                                quickSort(arr,size);
+                                quickSort(arr,0,size- 1);
                                 printf("Sorted array: ");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
                                     printf("%d ",arr[i]);
                                 }
@@ -898,14 +902,7 @@ default:
 		 }
 
 									}								
-																																									}																																					  	 	 
-		 	 
-	 
-
-	
-																																										  	 	 
-	
-		
+																																									}																						
 			
 		
 		
