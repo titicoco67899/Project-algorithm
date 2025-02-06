@@ -49,5 +49,10 @@ int binarysearch(int arr[],int size,int target);
 int linearSearch(int arr[],int size,int target);
 void leftshift(int arr[],int size,int k);
 void rightshift(int arr[],int size,int k);
+void bubbleSort(int arr[], int size);
+void selectionSort(int arr[], int size);
+void insertionSort(int arr[], int size);
+void mergeSort(int arr[], int left, int right);
+void quickSort(int arr[], int low, int high);
 
 #endif
