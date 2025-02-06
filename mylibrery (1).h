@@ -54,4 +54,9 @@ void selectionSort(int arr[], int size);
 void insertionSort(int arr[], int size);
 void quickSort(int arr[], int low, int high);
 int findMissingNumber(int arr[], int size);
+int stringLenght(char* str);
+int stringLenghtconst(const char* str);
+void stringCopy(char* dest, const char* src);
+void stringCopyGeneral(char* dest, char* src);
+
 #endif
