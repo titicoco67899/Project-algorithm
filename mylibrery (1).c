@@ -1264,3 +1264,52 @@ void quickSort(int arr[], int low, int high) {
         quickSort(arr, pivotIndex + 1, high);
    }
 }
+void removeHashtag(char* str){
+	int l,c,i,j;
+	l=stringLenght(str);
+	char temp[l];
+	c=0;
+	for(i=0;i<l;i++){
+		if(str[i]!='#'){
+		temp[c]=str[i];
+		c++;
+		}
+		}
+		for(j=0;j<l;j++){
+			str[j]=temp[j];
+		}
+}
+int stringLenght(char*str){
+	int i,counter;
+	i=0;
+	counter=0;
+	while(str[i]!='\0'){
+		counter++;
+		i++;
+	}
+	return counter;
+}
+int stringLenghtconst(const char*str){
+	int i,counter;
+	i=0;
+	counter=0;
+	while(str[i]!='\0'){
+		counter++;
+		i++;
+	}
+	return counter;
+}
+void stringCopy(char* dest, const char* src){
+	int i,l;
+	l=stringLenghtconst(src);
+	for(i=0;i<l;i++){
+		dest[i]=src[i];
+	}
+}
+void stringCopyGeneral(char*dest,char*src){
+	int i,l;
+	l=stringLenght(src);
+	for(i=0;i<l;i++){
+		dest[i]=src[i];
+	}
+}
