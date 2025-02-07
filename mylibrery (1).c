@@ -4,7 +4,6 @@
 #include<stdbool.h>
 #include"my headers.h"
 
-
 int factorial(int A)
 {
 	int i,prod;
@@ -1264,52 +1263,112 @@ void quickSort(int arr[], int low, int high) {
         quickSort(arr, pivotIndex + 1, high);
    }
 }
-void removeHashtag(char* str){
-	int l,c,i,j;
-	l=stringLenght(str);
-	char temp[l];
-	c=0;
-	for(i=0;i<l;i++){
-		if(str[i]!='#'){
-		temp[c]=str[i];
-		c++;
-		}
-		}
-		for(j=0;j<l;j++){
-			str[j]=temp[j];
-		}
+int stringLength( const char* str){
+int Length=0; // Initialize the length counter to 0
+  // Iterate through the string until the null terminator is found
+while(str[Length] != '\0'){
+Length++; // Increment the counter for each character
 }
-int stringLenght(char*str){
-	int i,counter;
-	i=0;
-	counter=0;
-	while(str[i]!='\0'){
-		counter++;
-		i++;
-	}
-	return counter;
-}
-int stringLenghtconst(const char*str){
-	int i,counter;
-	i=0;
-	counter=0;
-	while(str[i]!='\0'){
-		counter++;
-		i++;
-	}
-	return counter;
+return Length; // Return the total count as the string's length
 }
 void stringCopy(char* dest, const char* src){
-	int i,l;
-	l=stringLenghtconst(src);
-	for(i=0;i<l;i++){
-		dest[i]=src[i];
-	}
+// Loop until the null terminator in the source string is encountered
+while( *src != '\0' ){
+*dest = *src;                                       // Copy the character from source to destination
+src++;                                              // Move to the next character in the source string 
+dest++;                                             // Move to the next character in the destination string
 }
-void stringCopyGeneral(char*dest,char*src){
-	int i,l;
-	l=stringLenght(src);
-	for(i=0;i<l;i++){
-		dest[i]=src[i];
-	}
+*dest = '\0';                                       // Null-terminate
 }
+void stringConcat(char* dest, const char* src) {
+    // Move the destination pointer to the end of the current string
+    while (*dest != '\0') {
+        dest++;
+    }
+                       // Copy each character from the source string to the end of the destination string
+    while (*src != '\0') {
+        *dest = *src;          // Copy the character from source to destination
+        dest++;                // Move to the next character in the destination string
+        src++;                 // Move to the next character in the source string
+    }
+    *dest = '\0';              // Add a null terminator to the end of the concatenated string
+}
+int stringCompare(const char* str1, const char* str2) {
+    // Loop through both strings as long as characters are equal and neither string has reached the null terminator
+    while (*str1 == *str2 && *str1 != '\0' && *str2 != '\0') {
+        str1++;  // Move to the next character in str1
+        str2++;  // Move to the next character in str2
+    }
+
+    // Return the difference of ASCII values of the characters where the strings differ
+    // If the strings are identical, this will return 0
+    return (unsigned char)*str1 - (unsigned char)*str2;
+}
+
+void initializeMatris(int rows, int cols, int matrix[rows][cols], int value){ /*A simple for loop that will
+Asign the value given to a the current matrix colomn*/
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            matrix[i][j] = value;
+        }
+    }
+}
+
+void printMatrix(int rows, int cols, int matrix[rows][cols]){ /* A for loop that goes into each element of
+the matrix and prints it off, using nested loops to go through each row when being done with all of the 
+colomns of the a certain row*/
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            printf("%d", matrix[i][j]);
+        }
+    }
+}
+void inputMatrix(int rows, int cols, int matrix[rows][cols]){ /*Same approach as the initializing function, 
+but instead of assigning a value, it asks for one */
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+//Matrix Arithmetics
+void addMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
+/*Since both the matrices have the same rows and colomns number, we can use 2 nested loops as usual
+that will sum up each of the matrices elements to each other to result in a new matrix added up*/
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            result[i][j] = mat1[i][j] + mat2[i][j];
+        }
+    }
+}
+void subtractMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
+/*Same approach as the addition function, but instead of adding the elements, we subtract them*/
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            result[i][j] = mat1[i][j] - mat2[i][j];
+        }
+    }
+}
+void multiplyMatrices(int rows1, int cols1, int rows2, int cols2, int mat1[rows1][cols1], int mat2[rows2][cols2], int result[rows1][cols2]){
+
+for(int i = 0; i < rows1; i++){
+    for(int j = 0; j < cols2; j++){
+        result[i][j] = 0;
+        for(int k = 0; k < cols1; k++){
+            result[i][j] += mat1[i][k] * mat2[k][j];
+        }
+    }
+}
+}
+
+void scalarMultiplyMatrix(int rows, int cols, int matrix[rows][cols], int scalar){
+/*Basically uses the same approach as for the addition and substraction but this time 
+it multiplies each element by a given scalar*/
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            matrix[i][j] *= scalar;
+        }
+    }
+}
+
+
