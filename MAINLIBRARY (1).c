@@ -2,19 +2,28 @@
 #include<stdlib.h>
 #include<math.h>
 #include<stdbool.h>
-#include"mylibrery.h"
+#include"mylibrery.h"	
 int main()
 {
 	int i,n,m,desire,t;
 	int arr[20];
 	char ch;
-	printf("welcome to library testing main algorithm!\n");
-	printf("OPERATIONS ON NUMBERS:\n\nBASIC OPERATIONS\n\n1-sum of digits\n2-reverse number\n3-ispalindrom\n4-isprime\n5-gcd\n6-lcm\n-7factorial\n8-iseven\n\nINTERMEDIATE OPERATIONS\n\n9-prime factorization\n10-isarmstrong\n11-fibonacci sequence\n12-sum of divisors\n");
-	printf("13-isperfect\n14-ismagic\n15-is automorphic\n\nADVANCED OPERATIONS\n\n16-tobinary\n17-isNarceciste\n18-sqrt aproximiation\n19-exponential\n20-is happy\n21-isabundat\n22-isdeficient\n23-sum even fibonacci\n24-isharshad\n");
+	char str[100], result[100], find[100], replace[100];  
+        int vowels, consonants;  
+
+
+
+ printf(" ╔════════════════════════════════════════════════════╗ \n");
+    printf(" ║  ✨ welcome to library testing main algorithm ✨  ║ \n");
+    printf(" ╚════════════════════════════════════════════════════╝ \n");
+	printf("╭───[●] OPERATION ON NUMBERS [●]───╮\n\n➤  BASIC OPERATIONS\n\n1-sum of digits\n2-reverse number\n3-ispalindrom\n4-isprime\n5-gcd\n6-lcm\n-7factorial\n8-iseven\n\n➤  INTEERMEDIATE OPERATIONS\n\n9-prime factorization\n10-isarmstrong\n11-fibonacci sequence\n12-sum of divisors\n");
+	printf("13-isperfect\n14-ismagic\n15-is automorphic\n\n ➤  ADVANCED OPERATIONS\n\n16-tobinary\n17-isNarceciste\n18-sqrt aproximiation\n19-exponential\n20-is happy\n21-isabundat\n22-isdeficient\n23-sum even fibonacci\n24-isharshad\n");
 	printf("25-catalan number\n26-pascal triangle\n28-kaprekar number\n29-smith number\n30-sum of prime numbers\n");
 	
-	printf("\n\nOPERATIONS ON ARRAYS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\nINTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
+	printf("\n\n╭───[●] OPERATION ON ARRAYS [●]───╮\n\n➤  BASIC OPERATIONS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\n ➤ INTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
 	printf("39-find second largest\n40-find frequency of elements\n41-remove duplicates\n42-binary search\n43-Linear search\n44-left shift array\n45-right shift array\n46-find missing number\n47-bubble sort\n48-selection sort\n49-insertion sort\n50-quick sort\n");
+	printf("\n╭───[●] OPERATION ON STRINGS [●]───╮\n\n51-String lenght\n52-string copied\n53-strings concat\n54-strings campare\n");
+		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix");
 	printf("\nchoose the number coresponding to the function that you want to try:\n");
 	scanf("%d",&desire);
 	switch(desire)
@@ -894,19 +903,214 @@ int main()
                                 printf("\n");
                                 break;
                             }
-		
 	
+case 51:{
+    printf("Enter a string: ");  
+                scanf("%s", str);  
+                printf("Length of string: %d\n", stringLength(str));  
+                break;  
+	
+}
+case 52:{
+     
+                printf("Enter source string: ");  
+                scanf("%s", str);  
+                char dest[100];       // ensure dest is large enough  
+                stringCopy(dest, str);  
+                printf("Copied string: %s\n", dest);  
+                break;  
+}
+case 53:{
+      
+                printf("Enter first string: ");  
+                scanf("%s", str);  
+                char concatStr[100];  // ensure concatStr is initialized  
+                printf("Enter string to concatenate: ");  
+                scanf("%s", concatStr);  
+                stringConcat(str, concatStr);  
+                printf("Concatenated string: %s\n", str);  
+                break; 
+}
+case 54:{
+       
+                printf("Enter first string: ");  
+                scanf("%s", str);  
+                char str2[100];  
+                printf("Enter second string: ");  
+                scanf("%s", str2);  
+                printf("String comparison result: %d\n", stringCompare(str, str2));  
+                break; 
+}
+case 55:{
+    int rows,cols,value;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                printf("Enter the value to initialize: ");
+                                scanf("%d",&value);
+                                int matrix[rows][cols];
+                                initializeMatris(rows,cols,matrix,value);
+                                printf("Initialized Matrix:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        printf("%d ",matrix[i][j]);
+                                    }
+                                    printf("\n");
+                                }
+                                printf("\n");
+                                break;
+}
+case 56:{
+     int rows,cols;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                int matrix[rows][cols];
+                                printf("Enter matrix elements:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        scanf("%d",&matrix[i][j]);
+                                    }
+                                }
+                                printf("The matrix is:\n");
+                                printMatrix(rows,cols,matrix);
+                                printf("\n");
+                                break;
+}
+case 57:{
+     int rows,cols;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                int matrix[rows][cols];
+                                	inputMatrix(rows,cols,matrix);
+                                break;
+}
+case 58:{
+     int rows,cols;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                int mat1[rows][cols],mat2[rows][cols],result[rows][cols];
+                                printf("Enter elements of the first matrix:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        scanf("%d",&mat1[i][j]);
+                                    }
+                                }
+                                printf("Enter elements of the second matrix:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        scanf("%d",&mat2[i][j]);
+                                    }
+                                }
+                                addMatrices(rows,cols,mat1,mat2,result);
+                                printf("Resultant matrix after addition:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        printf("%d ",result[i][j]);
+                                    }
+                                    printf("\n");
+                                }
+                                printf("\n");
+                                break;
+                            
+}
+
+
+case 59:{
+    int rows,cols;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                int mat1[rows][cols],mat2[rows][cols],result[rows][cols];
+                                printf("Enter elements of the first matrix:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        scanf("%d",&mat1[i][j]);
+                                    }
+                                }
+                                printf("Enter elements of the second matrix:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        scanf("%d",&mat2[i][j]);
+                                    }
+                                }
+                                subtractMatrices(rows,cols,mat1,mat2,result);
+                                printf("Resultant matrix after subtraction:\n");
+                                for(int i=0;i<rows;i++)
+                                {
+                                    for(int j=0;j<cols;j++)
+                                    {
+                                        printf("%d ",result[i][j]);
+                                    }
+                                    printf("\n");
+                                }
+                                
+                                printf("\n");
+                                break;
+}
+
+case 60:{
+    int rows1,cols1,rows2,cols2;
+                                printf("Enter number of rows1: ");
+                                scanf("%d",&rows1);
+                                printf("Enter number of columns1: ");
+                                scanf("%d",&cols1);
+                                printf("Enter number of rows2: ");
+                                scanf("%d",&rows2);
+                                printf("Enter number of columns2: ");
+                                scanf("%d",&cols2);
+                                int matrix1[rows1][cols1];
+                                int matrix2[rows2][cols2];
+                                int result[100][100];
+                                printf("input matrix1: ");
+                                	inputMatrix(rows1,cols1,matrix1);
+                                printf("input matrix2: ");
+									inputMatrix(rows2,cols2,matrix2);
+multiplyMatrices(rows1, cols1, matrix1,  rows2,cols2,matrix2, result);
+
+                                break;
+}
+case 61:{
+    int rows1,cols1,scalar;
+                                printf("Enter number of rows1: ");
+                                scanf("%d",&rows1);
+                                printf("Enter number of columns1: ");
+                                scanf("%d",&cols1);
+                                int matrix1[rows1][cols1];
+                                printf("input matrix: ");
+                                	inputMatrix(rows1,cols1,matrix1);
+                                printf("Enter number: ");
+                                scanf("%d",&scalar);
+                            	
+scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
+                                break;
+}
 default:
 		 {
-		 	printf("choose a number");
+		 	printf("------THE NUMBER YOU ENTERED IS NOT INCLUDED IN THE PROGRAM, PLEASE TRY ANOTHER NUMBER-------\n");
 		 }
 
 									}								
 																																									}																						
 			
-		
-		
-			
-		
-	
-
