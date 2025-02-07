@@ -3,6 +3,7 @@
 #define ERR_INVALID_INPUT -1
 #define ERR_OUT_OF_MEMORY -2
 #include<stdbool.h>
+#include <string.h>
 int GCD(int A,int B);
 int LCM(int A,int B);
 int factorial(int A);
