@@ -1278,35 +1278,33 @@ while( *src != '\0' ){
 src++;                                              // Move to the next character in the source string 
 dest++;                                             // Move to the next character in the destination string
 }
-*dest = '\0';                                       // Null-terminate
+*dest = '\0';                                      
 }
 void stringConcat(char* dest, const char* src) {
-    // Move the destination pointer to the end of the current string
+    
     while (*dest != '\0') {
         dest++;
     }
-                       // Copy each character from the source string to the end of the destination string
+                       
     while (*src != '\0') {
-        *dest = *src;          // Copy the character from source to destination
-        dest++;                // Move to the next character in the destination string
-        src++;                 // Move to the next character in the source string
+        *dest = *src;        
+        dest++;                
+        src++;                 
     }
-    *dest = '\0';              // Add a null terminator to the end of the concatenated string
+    *dest = '\0';             
 }
 int stringCompare(const char* str1, const char* str2) {
-    // Loop through both strings as long as characters are equal and neither string has reached the null terminator
+    
     while (*str1 == *str2 && *str1 != '\0' && *str2 != '\0') {
-        str1++;  // Move to the next character in str1
-        str2++;  // Move to the next character in str2
+        str1++;  
+        str2++;  
     }
 
-    // Return the difference of ASCII values of the characters where the strings differ
-    // If the strings are identical, this will return 0
+   
     return (unsigned char)*str1 - (unsigned char)*str2;
 }
 
-void initializeMatris(int rows, int cols, int matrix[rows][cols], int value){ /*A simple for loop that will
-Asign the value given to a the current matrix colomn*/
+void initializeMatris(int rows, int cols, int matrix[rows][cols], int value){ 
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             matrix[i][j] = value;
@@ -1314,27 +1312,24 @@ Asign the value given to a the current matrix colomn*/
     }
 }
 
-void printMatrix(int rows, int cols, int matrix[rows][cols]){ /* A for loop that goes into each element of
-the matrix and prints it off, using nested loops to go through each row when being done with all of the 
-colomns of the a certain row*/
+void printMatrix(int rows, int cols, int matrix[rows][cols]){ 
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             printf("%d", matrix[i][j]);
         }
     }
 }
-void inputMatrix(int rows, int cols, int matrix[rows][cols]){ /*Same approach as the initializing function, 
-but instead of assigning a value, it asks for one */
+void inputMatrix(int rows, int cols, int matrix[rows][cols]){ 
+
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             scanf("%d", &matrix[i][j]);
         }
     }
 }
-//Matrix Arithmetics
+
 void addMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
-/*Since both the matrices have the same rows and colomns number, we can use 2 nested loops as usual
-that will sum up each of the matrices elements to each other to result in a new matrix added up*/
+
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             result[i][j] = mat1[i][j] + mat2[i][j];
@@ -1342,7 +1337,7 @@ that will sum up each of the matrices elements to each other to result in a new 
     }
 }
 void subtractMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
-/*Same approach as the addition function, but instead of adding the elements, we subtract them*/
+
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             result[i][j] = mat1[i][j] - mat2[i][j];
@@ -1353,7 +1348,7 @@ void multiplyMatrices(int rows1, int cols1, int rows2, int cols2, int mat1[rows1
 
 for(int i = 0; i < rows1; i++){
     for(int j = 0; j < cols2; j++){
-        result[i][j] = 0;
+        result[i][j] = 1;
         for(int k = 0; k < cols1; k++){
             result[i][j] += mat1[i][k] * mat2[k][j];
         }
@@ -1362,8 +1357,7 @@ for(int i = 0; i < rows1; i++){
 }
 
 void scalarMultiplyMatrix(int rows, int cols, int matrix[rows][cols], int scalar){
-/*Basically uses the same approach as for the addition and substraction but this time 
-it multiplies each element by a given scalar*/
+
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             matrix[i][j] *= scalar;
