@@ -58,5 +58,11 @@ int stringLenght(char* str);
 int stringLenghtconst(const char* str);
 void stringCopy(char* dest, const char* src);
 void stringCopyGeneral(char* dest, char* src);
+void initializeMatrix(int rows, int cols, int matrix[rows][cols], int value);
+void printMatrix(int rows, int cols, int matrix[rows][cols]);
+void inputMatrix(int rows, int cols, int matrix[rows][cols]);
+void addMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]);
+
+
 
 #endif
