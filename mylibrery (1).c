@@ -1026,41 +1026,29 @@ int SecondLargest(int arr[],int size)
 }
 
 
-void elementFrequency(int arr[],int size)
+void elementFrequency(int arr[],int size){
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    int freq[max + 1];
+    for (int i = 0; i <= max; i++) {
+        freq[i] = 0;
+    }
 
-{
-	int g,i,k,count;
-	bool find;
-	for(i=0;i<size;i++)
-	{
-		count=0;
-		find=false;
-		for(g=0;g<i;g++)
-		{
-			if(arr[g]==arr[i])
-			{
-				find=true;
-			}
-		}
-		for(k=i+1;k<size;k++)
-		{
-			if(find==true)
-			{
-				break;
-			}
-			if(arr[k]==arr[i])
-			{
-				count=count+1;
-			}
-		}
-		if(find==false)
-		{
-			count=count+1;
-		printf("the frequency of %d is:%d",arr[i],count);
-		}
-		
-	}
-	
+    for (int i = 0; i < size; i++) {
+        freq[arr[i]]++;
+    }
+
+    printf("\nElement | Frequency\n");
+    printf("------------------\n");
+    for (int i = 0; i <= max; i++) {
+        if (freq[i] > 0) { 
+            printf("   %d    |    %d\n", i, freq[i]);
+        }
+    }
 }
 
 
