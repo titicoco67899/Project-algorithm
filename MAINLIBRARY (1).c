@@ -676,10 +676,11 @@ int main()
 																					}
 																																									
 	case 40:
-	{
+	{   int i,n;
 		do{
 			printf("how many elements you have:\n");
 			scanf("%d",&n);
+			int arr[n];
 			printf("give the elements\n:");
 			for(i=0;i<n;i++)
 			{
