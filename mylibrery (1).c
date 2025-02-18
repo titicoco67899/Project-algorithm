@@ -9,7 +9,7 @@ int factorial(int A)
 	prod=1;
 	if(A<0)
 	{
-		return ERR_INVALID_INPUT;
+		return -1;
 	}
 	else
 	{
@@ -87,7 +87,7 @@ int sumofdivisors(int A)
 	
 	if(A==0)
 	{
-		return ERR_OUT_OF_MEMORY;
+		return -1;
 	}
 	else
 	{
@@ -618,13 +618,13 @@ unsigned long catalanNumber(int A)
 	
 	if(A<0)
 	{
-		return ERR_INVALID_INPUT;//it is better for a librrary to be non-interactive//
+		return -1;//it is better for a librrary to be non-interactive//
 	}
 	else
 	{
 		if(A>18)
 		{
-			return ERR_OUT_OF_MEMORY;
+			return -1;
 		}
 		else
 		{
@@ -660,7 +660,7 @@ int sumEvenFibonacci(int A)
 	sum=0;
 	if(A<0)
 	{
-		return ERR_INVALID_INPUT;
+		return -1;
 	}
 	else
 	{
@@ -791,7 +791,7 @@ double SqrtApprox(int A)
 	if(A<0)
 	{
 		printf("undefined value");
-		return ERR_INVALID_INPUT;//error code//
+		return -1;//error code//
 	}
 	else
 	{
@@ -830,7 +830,7 @@ double power(int base,int exp)
 		if(base==0)
 		{
 			
-			return ERR_INVALID_INPUT;
+			return -1;
 		}
 		else
 		{
@@ -1026,24 +1026,25 @@ int SecondLargest(int arr[],int size)
 
 
 void elementFrequency(int arr[],int size){
+	int i;
     int max = arr[0];
-    for (int i = 1; i < size; i++) {
+    for (i = 1; i < size; i++) {
         if (arr[i] > max) {
             max = arr[i];
         }
     }
     int freq[max + 1];
-    for (int i = 0; i <= max; i++) {
+    for ( i = 0; i <= max; i++) {
         freq[i] = 0;
     }
 
-    for (int i = 0; i < size; i++) {
+    for ( i = 0; i < size; i++) {
         freq[arr[i]]++;
     }
 
     printf("\nElement | Frequency\n");
     printf("------------------\n");
-    for (int i = 0; i <= max; i++) {
+    for ( i = 0; i <= max; i++) {
         if (freq[i] > 0) { 
             printf("   %d    |    %d\n", i, freq[i]);
         }
@@ -1185,8 +1186,9 @@ int findMissingNumber(int arr[],int size){
 }	
 
 void bubbleSort(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
+	int i,j;
+    for ( i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
@@ -1197,9 +1199,10 @@ void bubbleSort(int arr[], int size) {
 }
 
 void selectionSort(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
+	int i,j;
+    for (i = 0; i < size - 1; i++) {
         int minind = i;
-        for (int j = i + 1; j < size; j++) {
+        for ( j = i + 1; j < size; j++) {
             if (arr[j] < arr[minind]) {
                 minind = j;
             }
@@ -1211,7 +1214,8 @@ void selectionSort(int arr[], int size) {
 }
 
 void insertionSort(int arr[], int size) {
-    for (int i = 1; i < size; i++) {
+	int i;
+    for ( i = 1; i < size; i++) {
         int insrt = arr[i];
         int j = i - 1;
         while (j >= 0 && arr[j] > insrt) {
@@ -1230,9 +1234,10 @@ void swap(int* a, int* b) {
 }
 // Function to partition the array around the pivot
 int partition(int arr[], int low, int high) {
+	int j;
     int pivot = arr[high]; 
     int i = low - 1; 
- for (int j = low; j < high; j++) {
+ for (j = low; j < high; j++) {
         if (arr[j] <= pivot) {
             i++;
             swap(&arr[i], &arr[j]);
@@ -1292,51 +1297,53 @@ int stringCompare(const char* str1, const char* str2) {
 }
 
 void initializeMatrix(int rows, int cols, int matrix[rows][cols], int value){ 
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             matrix[i][j] = value;
         }
     }
 }
 
-void printMatrix(int rows, int cols, int matrix[rows][cols]){ 
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+void printMatrix(int rows, int cols, int matrix[rows][cols]){
+int i,j; 
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             printf("%d", matrix[i][j]);
         }
     }
 }
 void inputMatrix(int rows, int cols, int matrix[rows][cols]){ 
-
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             scanf("%d", &matrix[i][j]);
         }
     }
 }
 
 void addMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
-
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             result[i][j] = mat1[i][j] + mat2[i][j];
         }
     }
 }
 void subtractMatrices(int rows, int cols, int mat1[rows][cols], int mat2[rows][cols], int result[rows][cols]){
-
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             result[i][j] = mat1[i][j] - mat2[i][j];
         }
     }
 }
 void multiplyMatrices(int rows1, int cols1, int rows2, int cols2, int mat1[rows1][cols1], int mat2[rows2][cols2], int result[rows1][cols2]){
-
-for(int i = 0; i < rows1; i++){
-    for(int j = 0; j < cols2; j++){
+int i,j,k;
+for(i = 0; i < rows1; i++){
+    for(j = 0; j < cols2; j++){
         result[i][j] = 1;
-        for(int k = 0; k < cols1; k++){
+        for( k = 0; k < cols1; k++){
             result[i][j] += mat1[i][k] * mat2[k][j];
         }
     }
@@ -1344,9 +1351,9 @@ for(int i = 0; i < rows1; i++){
 }
 
 void scalarMultiplyMatrix(int rows, int cols, int matrix[rows][cols], int scalar){
-
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             matrix[i][j] *= scalar;
         }
     }
@@ -1358,8 +1365,9 @@ bool isSquareMatrix(int rows, int cols){
     return false;
 }
 bool isIdentityMatrix(int size, int matrix[size][size]){ 
-    for(int i= 0; i < size; i++){
-        for(int j = 0; j < size; j++){
+int i,j;
+    for( i= 0; i < size; i++){
+        for(j = 0; j < size; j++){
             if(i == j && matrix[i][j] != 1){
                 return false;
             }
@@ -1372,8 +1380,9 @@ bool isIdentityMatrix(int size, int matrix[size][size]){
 }
 
 bool isDiagonalMatrix(int size, int matrix[size][size]){
-    for(int i = 0; i < size; i++){
-        for(int j = 0; j < size; j++){
+	int i,j;
+    for(i = 0; i < size; i++){
+        for(j = 0; j < size; j++){
             if(i != j && matrix[i][j] != 0){
                 return false;
             }
@@ -1382,9 +1391,9 @@ bool isDiagonalMatrix(int size, int matrix[size][size]){
     return true;
 }
 bool isSymmetricMatrix(int rows, int cols, int matrix[rows][cols]){
-
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+int i,j;
+    for( i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             if(matrix[i][j] != matrix[j][i]){
                 return false;
             }
@@ -1393,8 +1402,9 @@ bool isSymmetricMatrix(int rows, int cols, int matrix[rows][cols]){
     return true;
 }
 bool isUpperTriangular(int rows, int cols, int matrix[rows][cols]){
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j < cols; j++){
+	int i,j;
+    for(i = 0; i < rows; i++){
+        for( j = 0; j < cols; j++){
             if(i > j && matrix[i][j] != 0){
                 return false;
             }
@@ -1404,16 +1414,18 @@ bool isUpperTriangular(int rows, int cols, int matrix[rows][cols]){
 return true;
 }
 void transposeMatrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+	int i,j;
+    for ( i = 0; i < rows; i++) {
+        for ( j = 0; j < cols; j++) {
             result[j][i] = matrix[i][j];  // Swapping rows and columns
         }
     }
 }
 void rotateMatrix90(int size, int matrix[size][size]) {
+    int i, j, k;
     // Step 1: Transpose the matrix
-    for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
+    for (i = 0; i < size; i++) {
+        for (j = i + 1; j < size; j++) {
             // Swap matrix[i][j] with matrix[j][i]
             int temp = matrix[i][j];
             matrix[i][j] = matrix[j][i];
@@ -1422,8 +1434,8 @@ void rotateMatrix90(int size, int matrix[size][size]) {
     }
 
     // Step 2: Reverse each row
-    for (int i = 0; i < size; i++) {
-        for (int j = 0, k = size - 1; j < k; j++, k--) {
+    for (i = 0; i < size; i++) {
+        for (j = 0, k = size - 1; j < k; j++, k--) {
             // Swap matrix[i][j] with matrix[i][k]
             int temp = matrix[i][j];
             matrix[i][j] = matrix[i][k];
@@ -1431,11 +1443,11 @@ void rotateMatrix90(int size, int matrix[size][size]) {
         }
     }
 }
-// Function to calculate the trace of a square matrix
 int traceMatrix(int size, int matrix[size][size]) {
+	int i;
     int trace = 0;
     // Sum the elements on the main diagonal (i.e., matrix[i][i])
-    for (int i = 0; i < size; i++) {
+    for ( i = 0; i < size; i++) {
         trace += matrix[i][i];
     }
     return trace;
