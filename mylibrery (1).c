@@ -1403,4 +1403,40 @@ bool isUpperTriangular(int rows, int cols, int matrix[rows][cols]){
     }
 return true;
 }
-	
+void transposeMatrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[j][i] = matrix[i][j];  // Swapping rows and columns
+        }
+    }
+}
+void rotateMatrix90(int size, int matrix[size][size]) {
+    // Step 1: Transpose the matrix
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            // Swap matrix[i][j] with matrix[j][i]
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+
+    // Step 2: Reverse each row
+    for (int i = 0; i < size; i++) {
+        for (int j = 0, k = size - 1; j < k; j++, k--) {
+            // Swap matrix[i][j] with matrix[i][k]
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[i][k];
+            matrix[i][k] = temp;
+        }
+    }
+}
+// Function to calculate the trace of a square matrix
+int traceMatrix(int size, int matrix[size][size]) {
+    int trace = 0;
+    // Sum the elements on the main diagonal (i.e., matrix[i][i])
+    for (int i = 0; i < size; i++) {
+        trace += matrix[i][i];
+    }
+    return trace;
+}
