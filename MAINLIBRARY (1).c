@@ -24,7 +24,7 @@ int main()
 	printf("\n\n╭───[●] OPERATION ON ARRAYS [●]───╮\n\n➤  BASIC OPERATIONS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\n ➤ INTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
 	printf("39-find second largest\n40-find frequency of elements\n41-remove duplicates\n42-binary search\n43-Linear search\n44-left shift array\n45-right shift array\n46-find missing number\n47-bubble sort\n48-selection sort\n49-insertion sort\n50-quick sort\n");
 	printf("\n╭───[●] OPERATION ON STRINGS [●]───╮\n\n51-String lenght\n52-string copied\n53-strings concat\n54-strings campare\n");
-		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix\n62-Square Matrix\n63-Identity Matrix\n64-Diagonal Matrix\n65-Symmetric Matrix\n66-Upper Triangular Matrix");
+		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix\n62-Square Matrix\n63-Identity Matrix\n64-Diagonal Matrix\n65-Symmetric Matrix\n66-Upper Triangular\n67-MatrixtransposeMatrix\n68-rotateMatrix90\n69-Trace matrix");
 	printf("\nchoose the number coresponding to the function that you want to try:\n");
 	scanf("%d",&desire);
 	switch(desire)
@@ -1212,7 +1212,86 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
         printf("The matrix is not upper triangular.\n");
     }
                             }
-                
+	case 67:
+{
+    int rows, cols;
+
+    // Step 1: Ask user for matrix dimensions
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter the number of columns: ");
+    scanf("%d", &cols);
+
+    int matrix[rows][cols], transposed[cols][rows];  // Declare matrices
+
+    // Step 2: Input matrix elements
+    printf("Enter the matrix elements:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Step 3: Call the function to compute the transpose
+    transposeMatrix(rows, cols, matrix, transposed);
+
+    // Step 4: Display the transposed matrix
+    printf("\nTransposed Matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transposed[i][j]);
+        }
+        printf("\n");
+    }
+	 }	
+		
+		case 68: {
+    int size;
+    printf("Enter the size of the square matrix: ");
+    scanf("%d", &size);
+
+    int matrix[size][size];
+
+    printf("Enter the matrix elements:\n");
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Rotate the matrix by 90 degrees
+    rotateMatrix90(size, matrix);
+
+    printf("\nMatrix after 90-degree rotation:\n");
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    break;
+}
+case 69: {
+    int size;
+   
+    printf("Enter the size of the square matrix: ");
+    scanf("%d", &size);
+
+    int matrix[size][size];
+
+    printf("Enter the matrix elements:\n");
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    int trace = traceMatrix(size, matrix);
+    printf("The trace of the matrix is: %d\n", trace);
+    
+    break;  
+}
+
 default:
 		 {
 		 	printf("------THE NUMBER YOU ENTERED IS NOT INCLUDED IN THE PROGRAM, PLEASE TRY ANOTHER NUMBER-------\n");
