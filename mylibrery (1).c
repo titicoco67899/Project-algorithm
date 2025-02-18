@@ -3,7 +3,6 @@
 #include<stdlib.h>
 #include<stdbool.h>
 #include"my headers.h"
-
 int factorial(int A)
 {
 	int i,prod;
@@ -1292,7 +1291,7 @@ int stringCompare(const char* str1, const char* str2) {
     return (unsigned char)*str1 - (unsigned char)*str2;
 }
 
-void initializeMatris(int rows, int cols, int matrix[rows][cols], int value){ 
+void initializeMatrix(int rows, int cols, int matrix[rows][cols], int value){ 
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             matrix[i][j] = value;
@@ -1352,5 +1351,56 @@ void scalarMultiplyMatrix(int rows, int cols, int matrix[rows][cols], int scalar
         }
     }
 }
+bool isSquareMatrix(int rows, int cols){
+    if(rows == cols){
+        return true;
+    }
+    return false;
+}
+bool isIdentityMatrix(int size, int matrix[size][size]){ 
+    for(int i= 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            if(i == j && matrix[i][j] != 1){
+                return false;
+            }
+            if(i != j && matrix[i][j] != 0){
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
+bool isDiagonalMatrix(int size, int matrix[size][size]){
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            if(i != j && matrix[i][j] != 0){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+bool isSymmetricMatrix(int rows, int cols, int matrix[rows][cols]){
 
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(matrix[i][j] != matrix[j][i]){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+bool isUpperTriangular(int rows, int cols, int matrix[rows][cols]){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(i > j && matrix[i][j] != 0){
+                return false;
+            }
+        
+        }
+    }
+return true;
+}
+	
