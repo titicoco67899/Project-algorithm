@@ -3,6 +3,7 @@
 #include<math.h>
 #include<stdbool.h>
 #include"mylibrery.h"	
+	
 int main()
 {
 	int i,n,m,desire,t;
@@ -23,7 +24,7 @@ int main()
 	printf("\n\n╭───[●] OPERATION ON ARRAYS [●]───╮\n\n➤  BASIC OPERATIONS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\n ➤ INTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
 	printf("39-find second largest\n40-find frequency of elements\n41-remove duplicates\n42-binary search\n43-Linear search\n44-left shift array\n45-right shift array\n46-find missing number\n47-bubble sort\n48-selection sort\n49-insertion sort\n50-quick sort\n");
 	printf("\n╭───[●] OPERATION ON STRINGS [●]───╮\n\n51-String lenght\n52-string copied\n53-strings concat\n54-strings campare\n");
-		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix");
+		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix\n62-Square Matrix\n63-Identity Matrix\n64-Diagonal Matrix\n65-Symmetric Matrix\n66-Upper Triangular Matrix");
 	printf("\nchoose the number coresponding to the function that you want to try:\n");
 	scanf("%d",&desire);
 	switch(desire)
@@ -951,7 +952,7 @@ case 55:{
                                 printf("Enter the value to initialize: ");
                                 scanf("%d",&value);
                                 int matrix[rows][cols];
-                                initializeMatris(rows,cols,matrix,value);
+                                initializeMatrix(rows,cols,matrix,value);
                                 printf("Initialized Matrix:\n");
                                 for(int i=0;i<rows;i++)
                                 {
@@ -1088,7 +1089,9 @@ case 60:{
                                 	inputMatrix(rows1,cols1,matrix1);
                                 printf("input matrix2: ");
 									inputMatrix(rows2,cols2,matrix2);
-multiplyMatrices(rows1, cols1, matrix1,  rows2,cols2,matrix2, result);
+
+
+    multiplyMatrices(rows1, cols1, rows2, cols2, matrix1, matrix2, result);
 
                                 break;
 }
@@ -1107,6 +1110,109 @@ case 61:{
 scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
                                 break;
 }
+		case 62:
+                            {
+                                int rows,cols;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                if(isSquareMatrix(rows,cols))
+                                {
+                                    printf("The matrix is a square matrix.\n");
+                                } 
+                                else 
+                                {
+                                    printf("The matrix is not a square matrix.\n");
+                                } 
+                                break;
+                            }
+		 case 63:
+                            {
+                                int size;
+                                printf("Enter the size of the square matrix: ");
+                                scanf("%d",&size);
+                                int matrix[size][size];
+                                printf("Enter elements of the matrix:\n");
+                                for(int i=0;i<size;i++)
+                                {
+                                    for(int j=0;j<size;j++)
+                                    {
+                                        scanf("%d",&matrix[i][j]);
+                                    }
+                                }
+                                if(isIdentityMatrix(size,matrix))
+                                {
+                                    printf("The matrix is an identity matrix.\n");
+                                } 
+                                else 
+                                {
+                                    printf("The matrix is not an identity matrix.\n");
+                                }
+                                break;
+                            }
+		 case 64:
+                            {
+                                int size;
+                                printf("Enter the size of the square matrix: ");
+                                scanf("%d",&size);
+                                int matrix[size][size];
+                                printf("Enter elements of the matrix:\n");
+                                for(int i=0;i<size;i++)
+                                {
+                                    for(int j=0;j<size;j++)
+                                    {
+                                        scanf("%d",&matrix[i][j]);
+                                    }
+                                }
+                                if(isDiagonalMatrix(size,matrix))
+                                {
+                                    printf("The matrix is a diagonal matrix.\n");
+                                } 
+                                else
+                                {
+                                    printf("The matrix is not a diagonal matrix.\n");
+                                }
+                                break;
+                            }
+		case 65:
+                            {
+                             int rows,cols,value;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                printf("Enter the value to initialize: ");
+                                scanf("%d",&value);
+                                int matrix[rows][cols];
+                                initializeMatrix(rows,cols,matrix,value);
+
+    if (isSymmetricMatrix(rows, cols, matrix)) {
+        printf("The matrix is symmetric.\n");
+    } else {
+        printf("The matrix is not symmetric.\n");
+    }
+                                break;
+                            }
+		 case 66:
+                            {
+  int rows,cols,value;
+                                printf("Enter number of rows: ");
+                                scanf("%d",&rows);
+                                printf("Enter number of columns: ");
+                                scanf("%d",&cols);
+                                printf("Enter the value to initialize: ");
+                                scanf("%d",&value);
+                                int matrix[rows][cols]; 
+                                initializeMatrix(rows,cols,matrix,value);
+
+    if (isUpperTriangular(rows, cols, matrix)) {
+        printf("The matrix is upper triangular.\n");
+    } else {
+        printf("The matrix is not upper triangular.\n");
+    }
+                            }
+                
 default:
 		 {
 		 	printf("------THE NUMBER YOU ENTERED IS NOT INCLUDED IN THE PROGRAM, PLEASE TRY ANOTHER NUMBER-------\n");
