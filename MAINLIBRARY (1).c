@@ -3,7 +3,6 @@
 #include<math.h>
 #include<stdbool.h>
 #include"mylibrery.h"	
-	
 int main()
 {
 	int i,n,m,desire,t;
@@ -14,17 +13,17 @@ int main()
 
 
 
- printf(" ╔════════════════════════════════════════════════════╗ \n");
-    printf(" ║  ✨ welcome to library testing main algorithm ✨  ║ \n");
-    printf(" ╚════════════════════════════════════════════════════╝ \n");
-	printf("╭───[●] OPERATION ON NUMBERS [●]───╮\n\n➤  BASIC OPERATIONS\n\n1-sum of digits\n2-reverse number\n3-ispalindrom\n4-isprime\n5-gcd\n6-lcm\n-7factorial\n8-iseven\n\n➤  INTEERMEDIATE OPERATIONS\n\n9-prime factorization\n10-isarmstrong\n11-fibonacci sequence\n12-sum of divisors\n");
-	printf("13-isperfect\n14-ismagic\n15-is automorphic\n\n ➤  ADVANCED OPERATIONS\n\n16-tobinary\n17-isNarceciste\n18-sqrt aproximiation\n19-exponential\n20-is happy\n21-isabundat\n22-isdeficient\n23-sum even fibonacci\n24-isharshad\n");
+ printf(" +----------------------------------------------------+ \n");
+    printf(" ¦   welcome to library testing main algorithm   ¦ \n");
+    printf(" +----------------------------------------------------+ \n");
+	printf("----== OPERATION ON NUMBERS ==----\n\n  ====>BASIC OPERATIONS\n\n1-sum of digits\n2-reverse number\n3-ispalindrom\n4-isprime\n5-gcd\n6-lcm\n-7factorial\n8-iseven\n\n====>INTEERMEDIATE OPERATIONS\n\n9-prime factorization\n10-isarmstrong\n11-fibonacci sequence\n12-sum of divisors\n");
+	printf("13-isperfect\n14-ismagic\n15-is automorphic\n\n ====> ADVANCED OPERATIONS\n\n16-tobinary\n17-isNarceciste\n18-sqrt aproximiation\n19-exponential\n20-is happy\n21-isabundat\n22-isdeficient\n23-sum even fibonacci\n24-isharshad\n");
 	printf("25-catalan number\n26-pascal triangle\n28-kaprekar number\n29-smith number\n30-sum of prime numbers\n");
 	
-	printf("\n\n╭───[●] OPERATION ON ARRAYS [●]───╮\n\n➤  BASIC OPERATIONS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\n ➤ INTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
+	printf("\n\n-----=== OPERATION ON ARRAYS ===----\n\n====>BASIC OPERATIONS\n\n31-print array\n32-find maximum\n33-find minimum\n34-calculate sum\n35-calculate average\n36-chek if sorted\n37-reverse array\n\n====>INTERMEDIATE OPERATIONS\n\n38-count even and odd numbers\n");
 	printf("39-find second largest\n40-find frequency of elements\n41-remove duplicates\n42-binary search\n43-Linear search\n44-left shift array\n45-right shift array\n46-find missing number\n47-bubble sort\n48-selection sort\n49-insertion sort\n50-quick sort\n");
-	printf("\n╭───[●] OPERATION ON STRINGS [●]───╮\n\n51-String lenght\n52-string copied\n53-strings concat\n54-strings campare\n");
-		printf("\n╭───[●] OPERATION ON MARTIX [●]───╮\n\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix\n62-Square Matrix\n63-Identity Matrix\n64-Diagonal Matrix\n65-Symmetric Matrix\n66-Upper Triangular\n67-MatrixtransposeMatrix\n68-rotateMatrix90\n69-Trace matrix");
+	printf("\n----=== OPERATION ON STRINGS ===----\n\n====>BASIC OPERATIONS\n 51-String lenght\n52-string copied\n53-strings concat\n54-strings campare\n");
+		printf("\n----===OPERATION ON MARTIX ===----\n\n\n====>BASIC OPERATIONS\n55-Initialise a matrix\n56-Print a matrix\n57-input matrix\n58-addition of two matrixes\n59-substraction of two matrix\n60-Multiplication of matrix\n61-scalar matrix\n62-Square Matrix\n63-Identity Matrix\n64-Diagonal Matrix\n65-Symmetric Matrix\n66-Upper Triangular\n67-MatrixtransposeMatrix\n68-rotateMatrix90\n69-Trace matrix");
 	printf("\nchoose the number coresponding to the function that you want to try:\n");
 	scanf("%d",&desire);
 	switch(desire)
@@ -945,6 +944,7 @@ case 54:{
 }
 case 55:{
     int rows,cols,value;
+    int i,j;
                                 printf("Enter number of rows: ");
                                 scanf("%d",&rows);
                                 printf("Enter number of columns: ");
@@ -954,9 +954,10 @@ case 55:{
                                 int matrix[rows][cols];
                                 initializeMatrix(rows,cols,matrix,value);
                                 printf("Initialized Matrix:\n");
-                                for(int i=0;i<rows;i++)
+
+                                for( i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for( j=0;j<cols;j++)
                                     {
                                         printf("%d ",matrix[i][j]);
                                     }
@@ -966,16 +967,16 @@ case 55:{
                                 break;
 }
 case 56:{
-     int rows,cols;
+     int rows,cols,i,j;
                                 printf("Enter number of rows: ");
                                 scanf("%d",&rows);
                                 printf("Enter number of columns: ");
                                 scanf("%d",&cols);
                                 int matrix[rows][cols];
                                 printf("Enter matrix elements:\n");
-                                for(int i=0;i<rows;i++)
+                                for(i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for(j=0;j<cols;j++)
                                     {
                                         scanf("%d",&matrix[i][j]);
                                     }
@@ -996,33 +997,33 @@ case 57:{
                                 break;
 }
 case 58:{
-     int rows,cols;
+     int rows,cols,i,j;
                                 printf("Enter number of rows: ");
                                 scanf("%d",&rows);
                                 printf("Enter number of columns: ");
                                 scanf("%d",&cols);
                                 int mat1[rows][cols],mat2[rows][cols],result[rows][cols];
                                 printf("Enter elements of the first matrix:\n");
-                                for(int i=0;i<rows;i++)
+                                for(i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for( j=0;j<cols;j++)
                                     {
                                         scanf("%d",&mat1[i][j]);
                                     }
                                 }
                                 printf("Enter elements of the second matrix:\n");
-                                for(int i=0;i<rows;i++)
+                                for( i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for( j=0;j<cols;j++)
                                     {
                                         scanf("%d",&mat2[i][j]);
                                     }
                                 }
                                 addMatrices(rows,cols,mat1,mat2,result);
                                 printf("Resultant matrix after addition:\n");
-                                for(int i=0;i<rows;i++)
+                                for(i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for(j=0;j<cols;j++)
                                     {
                                         printf("%d ",result[i][j]);
                                     }
@@ -1035,33 +1036,33 @@ case 58:{
 
 
 case 59:{
-    int rows,cols;
+    int rows,cols,i,j;
                                 printf("Enter number of rows: ");
                                 scanf("%d",&rows);
                                 printf("Enter number of columns: ");
                                 scanf("%d",&cols);
                                 int mat1[rows][cols],mat2[rows][cols],result[rows][cols];
                                 printf("Enter elements of the first matrix:\n");
-                                for(int i=0;i<rows;i++)
+                                for( i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for(j=0;j<cols;j++)
                                     {
                                         scanf("%d",&mat1[i][j]);
                                     }
                                 }
                                 printf("Enter elements of the second matrix:\n");
-                                for(int i=0;i<rows;i++)
+                                for( i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for( j=0;j<cols;j++)
                                     {
                                         scanf("%d",&mat2[i][j]);
                                     }
                                 }
                                 subtractMatrices(rows,cols,mat1,mat2,result);
                                 printf("Resultant matrix after subtraction:\n");
-                                for(int i=0;i<rows;i++)
+                                for(i=0;i<rows;i++)
                                 {
-                                    for(int j=0;j<cols;j++)
+                                    for(j=0;j<cols;j++)
                                     {
                                         printf("%d ",result[i][j]);
                                     }
@@ -1129,14 +1130,14 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
                             }
 		 case 63:
                             {
-                                int size;
+                                int size,i,j;
                                 printf("Enter the size of the square matrix: ");
                                 scanf("%d",&size);
                                 int matrix[size][size];
                                 printf("Enter elements of the matrix:\n");
-                                for(int i=0;i<size;i++)
+                                for(i=0;i<size;i++)
                                 {
-                                    for(int j=0;j<size;j++)
+                                    for( j=0;j<size;j++)
                                     {
                                         scanf("%d",&matrix[i][j]);
                                     }
@@ -1153,14 +1154,14 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
                             }
 		 case 64:
                             {
-                                int size;
+                                int size,i,j;
                                 printf("Enter the size of the square matrix: ");
                                 scanf("%d",&size);
                                 int matrix[size][size];
                                 printf("Enter elements of the matrix:\n");
-                                for(int i=0;i<size;i++)
+                                for( i=0;i<size;i++)
                                 {
-                                    for(int j=0;j<size;j++)
+                                    for(j=0;j<size;j++)
                                     {
                                         scanf("%d",&matrix[i][j]);
                                     }
@@ -1214,7 +1215,7 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
                             }
 	case 67:
 {
-    int rows, cols;
+    int rows, cols,i,j;
 
     // Step 1: Ask user for matrix dimensions
     printf("Enter the number of rows: ");
@@ -1226,8 +1227,8 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
 
     // Step 2: Input matrix elements
     printf("Enter the matrix elements:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    for (i = 0; i < rows; i++) {
+        for ( j = 0; j < cols; j++) {
             scanf("%d", &matrix[i][j]);
         }
     }
@@ -1237,8 +1238,8 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
 
     // Step 4: Display the transposed matrix
     printf("\nTransposed Matrix:\n");
-    for (int i = 0; i < cols; i++) {
-        for (int j = 0; j < rows; j++) {
+    for (i = 0; i < cols; i++) {
+        for ( j = 0; j < rows; j++) {
             printf("%d ", transposed[i][j]);
         }
         printf("\n");
@@ -1246,15 +1247,15 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
 	 }	
 		
 		case 68: {
-    int size;
+    int size,i,j;
     printf("Enter the size of the square matrix: ");
     scanf("%d", &size);
 
     int matrix[size][size];
 
     printf("Enter the matrix elements:\n");
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (i = 0; i < size; i++) {
+        for ( j = 0; j < size; j++) {
             scanf("%d", &matrix[i][j]);
         }
     }
@@ -1263,8 +1264,8 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
     rotateMatrix90(size, matrix);
 
     printf("\nMatrix after 90-degree rotation:\n");
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (i = 0; i < size; i++) {
+        for ( j = 0; j < size; j++) {
             printf("%d ", matrix[i][j]);
         }
         printf("\n");
@@ -1274,15 +1275,15 @@ scalarMultiplyMatrix(rows1, cols1, matrix1,scalar);
 }
 case 69: {
     int size;
-   
+   int i,j;
     printf("Enter the size of the square matrix: ");
     scanf("%d", &size);
 
     int matrix[size][size];
 
     printf("Enter the matrix elements:\n");
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (i = 0; i < size; i++) {
+        for ( j = 0; j < size; j++) {
             scanf("%d", &matrix[i][j]);
         }
     }
@@ -1296,6 +1297,11 @@ default:
 		 {
 		 	printf("------THE NUMBER YOU ENTERED IS NOT INCLUDED IN THE PROGRAM, PLEASE TRY ANOTHER NUMBER-------\n");
 		 }
+
+									}								
+																																									}																						
+			
+
 
 									}								
 																																									}																						
