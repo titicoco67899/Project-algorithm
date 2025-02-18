@@ -71,5 +71,8 @@ bool isIdentityMatrix(int size, int matrix[size][size]);
 bool isDiagonalMatrix(int size, int matrix[size][size]);
 bool isSymmetricMatrix(int rows, int cols, int matrix[rows][cols]);
 bool isUpperTriangular(int rows, int cols, int matrix[rows][cols]);
+void transposeMatrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]);
+void rotateMatrix90(int size, int matrix[size][size]);
+int traceMatrix(int size, int matrix[size][size]);
 #endif
 
